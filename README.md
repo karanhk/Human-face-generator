@@ -2,27 +2,29 @@
 
 ## Abstract
 
-This repository generates realistic human faces by using general adversarial network (GAN). It takes **32 numbers** and generates a **128x128x3** size image. It creates spectrogram from audio file by using `librosa` library and classifies that spectrogram by using CNN.
+This repository generates realistic human faces by using deep convolutional general adversarial network (DCGAN). It takes **32 numbers** and generates a **128x128x3** size image. It creates spectrogram from audio file by using `librosa` library and classifies that spectrogram by using CNN.
 
 ## Detailed
 
-This is a repository to classify audio recording into 50 sound categories including animal sound, natural sound, human non-speech sound, domestic sound, urban noises and many more. It is trained on [esc50]("https://www.kaggle.com/datasets/mmoreaux/environmental-sound-classification-50") dataset.
+This is a repository to generate realistic human faces of size 128x128x3. It uses deep convolutional general adversarial network (DCGAN). It has two models, generator and discriminator, the generator generates fake faces from latent of size 32 and discriminator classifies the generated image and actual image into real or fake images. They both are trained together, they both try to minimize their loss like two players game.
+The proposed model is trained on CelebA dataset.
 
-This repository uses `librosa` library to convert sound wave to digital audio signal and then converts that singal to spectrogram. This spectrogram is then sent to proposed CNN model. The CNN model is implemented using `Tensorflow`, it has 6 convolutional layers, 3 max pooling layers and 2 fully connected layers. The model is divided into 3 convolutional blocks. Each block has convolutional layer, max pooling layer and convolutional layer in sequence. Below is the screenshot of model summary.
+The discriminator is the convolutional neural network (CNN) with 5 convolutional layers and one dense layer. The convolutional part of generator is divied into 5 blocks, each block contains convolutional layer and leaky relu activation in a sequence. The generator has 4 Con2dTranspose layer and 3 convolutional layer. The Conv2dTranspose layer performs upsampling and convolutional together. The generator generates image from latent size of 32.
 
-![model summary]("https://drive.google.com/file/d/1hcZA51QmftX2GK8UVpq1vxB2rSPPnDUd/view?usp=sharing")
+The generator takes 32 numbers as input and reshape it to 16x16x128 tensor. Then it perfomes upsampling and covolution to generate 128x128x3 image. This generated image and actual image are passed to discrimiator. The labels for real and fake images are 0 and 1 respectively with some added noise. The discriminator identifies real and fake images. If discriminator makes mistake, it is penalised and if it makes correct prediction the generator is penalised. Hence both generator tries to fool the discriminator and discriminator tries to maximize its accuracy.
 
-This repository contains 6 files. The `implementation.ipynb` is the implementation code of the model, the `custom.ipynb` is to load the model and run it on custom audio file, the `requirments.txt` is the txt file containing requirments to run the model, the `categories.csv` contains categories of classification and the `instructions.txt` contains instructions to better understand this repository.
+This repository contains 3 files. The `implementation.ipynb` is the implementation code of the model, the `requirments.txt` is the txt file containing requirments to run the model and the `instructions.txt` contains instructions to better understand this repository.
 
 # Highlights
 
-The input is audio file. Here is the audio input given to the model.
-[Input wav file]("https://drive.google.com/drive/u/1/folders/1mW_QaB1f0xdvfTTPvoRR1k393CN_DzdC")
+The generator
+<img align="center" src="https://drive.google.com/file/d/1bNUVuSwKVnGePwTHIo8emPMrB46zgqeW/view?usp=sharing", alt="GAN"/>
 
-The spectrogram generated is 
-![Spectrogram]("https://drive.google.com/drive/u/1/folders/1mW_QaB1f0xdvfTTPvoRR1k393CN_DzdC")
+The discriminator
+<img align="center" src="https://drive.google.com/file/d/1bNUVuSwKVnGePwTHIo8emPMrB46zgqeW/view?usp=sharing", alt="GAN"/>
 
-And the model categorized it as `rain` sound.
+The GAN
+<img align="center" src="https://drive.google.com/file/d/1bNUVuSwKVnGePwTHIo8emPMrB46zgqeW/view?usp=sharing", alt="GAN"/>
 
 # Prerequisites
 
@@ -36,7 +38,7 @@ And the model categorized it as `rain` sound.
 
 # Future work
 
-In future, i'm looking forward to train CNN model based on inception network and residual network and to improve model's accuracy.
+In future, i'm looking forward to generate more realistic human faces and upload it.
 
 # Connect with me
 
