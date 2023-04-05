@@ -1,0 +1,6 @@
+This repository contains 3 files. 
+
+The implementation.ipynb is the implementation of proposed model in python. Run this file to train the model. All lines are self explainatory and it is
+completly implemented in Python.
+
+The requirments.txt is the requirments to run the file. Install all requirments using 'pip install -r requirements.txt'. 
