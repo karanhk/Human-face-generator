@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This repository generates realistic human faces by using deep convolutional general adversarial network (DCGAN). It takes **32 numbers** and generates a **128x128x3** size image. It creates spectrogram from audio file by using `librosa` library and classifies that spectrogram by using CNN.
+This repository generates realistic human faces by using deep convolutional general adversarial network (DCGAN). It takes **32 numbers** and generates a **128x128x3** size image. It creates spectrogram from audio file by using `librosa` library and classifies that spectrogram by using CNN. The code is completly in Python with tensorflow. The model is in training phase, very soon it will be uploaded.
 
 ## Detailed
 
