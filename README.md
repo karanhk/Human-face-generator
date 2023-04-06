@@ -40,6 +40,7 @@ The GAN
 
 1. Download the repository and unzip it.
 2. Install necessary packages using `pip install -r requirements.txt`.
+3. Download the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">Celeba dataset</a> to train the model.
 3. Read the `instructions.txt` for better understanding of repository.
 
 # Future work
