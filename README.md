@@ -18,19 +18,16 @@ This repository contains 3 files. The `implementation.ipynb` is the implementati
 # Highlights
 
 The generator
-<p>
-<img align="center" src="https://drive.google.com/file/d/1sOxJ2fxhTKDTYfwQaxsTh5HrBXiFznxb/view?usp=sharing", alt="Generator"/>
-</p>
+
+<img width="493" alt="Screenshot 2023-04-05 at 10 42 32 AM" src="https://user-images.githubusercontent.com/76246981/230336242-18ba08ac-1b56-4493-8813-3e024e1e5149.png">
 
 The discriminator
-<p>
-<img align="center" src="https://drive.google.com/file/d/1f7__JqmraTnLXDy8TaQPlBTqDBKzDZK2/view?usp=sharing", alt="Discriminator"/>
-</p>
+
+<img width="483" alt="Screenshot 2023-04-05 at 10 42 50 AM" src="https://user-images.githubusercontent.com/76246981/230336384-78a25fda-4a68-4dfe-80f4-60e96a8763bd.png">
 
 The GAN
-<p>
-<img align="center" src="https://drive.google.com/file/d/1bNUVuSwKVnGePwTHIo8emPMrB46zgqeW/view?usp=sharing", alt="GAN"/>
-</p>
+
+<img width="487" alt="Screenshot 2023-04-05 at 10 43 12 AM" src="https://user-images.githubusercontent.com/76246981/230336445-64ef24ca-915e-499c-aec1-4908e3896cbc.png">
 
 # Prerequisites
 
