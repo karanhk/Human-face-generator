@@ -2,14 +2,15 @@
 
 ## Abstract
 
-This repository generates realistic human faces by using deep convolutional general adversarial network (DCGAN). It takes **32 numbers** and generates a **128x128x3** size image. The code is completly in Python with tensorflow. The model is in training phase, very soon it will be uploaded.
+This repository generates realistic human faces by using deep convolutional generative adversarial network (DCGAN). It takes **32 numbers** and generates a **128x128x3** size image. The code is completly in Python with tensorflow. The model is in training phase, very soon it will be uploaded.
 
 ## Detailed
 
-This is a repository to generate realistic human faces of size 128x128x3. It uses deep convolutional general adversarial network (DCGAN). It has two models, generator and discriminator, the generator generates fake faces from latent of size 32 and discriminator classifies the generated image and actual image into real or fake images. They both are trained together, they both try to minimize their loss like two players game.
-The proposed model is trained on CelebA dataset.
+This is a repository to generate realistic human faces of size 128x128x3. It uses deep convolutional general adversarial network (DCGAN). It has two models, generator and discriminator, the generator generates fake faces from latent of size 32 and discriminator classifies the generated image and actual image into real or fake images. They both are trained in adversarial manner, they both try to minimize their loss like two players game.
 
-The discriminator is the convolutional neural network (CNN) with 5 convolutional layers and one dense layer. The convolutional part of generator is divied into 5 blocks, each block contains convolutional layer and leaky relu activation in a sequence. The generator has 4 Con2dTranspose layer and 3 convolutional layer. The Conv2dTranspose layer performs upsampling and convolutional together. The generator generates image from latent size of 32.
+The proposed model is trained on CelebA dataset. It has 2,02,599 images of 10,177 unique identities. 
+
+Here the discriminator is the convolutional neural network (CNN) with 5 convolutional layers and one dense layer. The convolutional part of generator is divied into 5 blocks, each block contains convolutional layer and leaky relu activation in a sequence. The generator has 4 Con2dTranspose layer and 3 convolutional layer. The Conv2dTranspose layer performs upsampling and convolutional together. The generator generates image from latent size of 32.
 
 The generator takes 32 numbers as input and reshape it to 16x16x128 tensor. Then it perfomes upsampling and covolution to generate 128x128x3 image. This generated image and actual image are passed to discrimiator. The labels for real and fake images are 0 and 1 respectively with some added noise. The discriminator identifies real and fake images. If discriminator makes mistake, it is penalised and if it makes correct prediction the generator is penalised. Hence both generator tries to fool the discriminator and discriminator tries to maximize its accuracy.
 
